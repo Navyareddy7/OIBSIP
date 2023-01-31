@@ -5,7 +5,7 @@ import java.util.Objects;
 
 class User{
     HashMap<Integer,Integer>userdata=new HashMap<>();
-   //**UserData**
+    //**UserData**
     public User(){
         userdata.put(9347,9696);
         userdata.put(7416,9390);
@@ -14,16 +14,14 @@ class User{
         userdata.put(9381,9849);
 
     }
-
-   // Function to check whether the entered id is present or not
+    // Function to check whether the entered id is present or not
     public boolean check1(int id){
         return userdata.containsKey(id);
     }
-    //function to compare passwords
     public boolean check2(int id,int pin){
         return Objects.equals(userdata.get(id),pin);
     }
-
+}
 
 
 public class Main {
@@ -34,14 +32,13 @@ public class Main {
         Scanner sc=new Scanner(System.in);
         User obj=new User();
         Deposit obj1=new Deposit();
-       Withdraw obj2=new Withdraw();
-       TransactionHistory obj3=new TransactionHistory();
-       Exit obj4=new Exit();
-       Transfer obj5=new Transfer();
+        Withdraw obj2=new Withdraw();
+        TransactionHistory obj3=new TransactionHistory();
+        Exit obj4=new Exit();
+        Transfer obj5=new Transfer();
         int userid,userpin=0 ;
         int withdrawl=0;
         int count=0;
-
         int choice;
         System.out.println("^^^WELCOME TO XYZ ATM^^^");
         System.out.println();
@@ -56,7 +53,6 @@ public class Main {
             System.out.println("No user is present with the entered id... ");
             System.exit(0);
         }
-
         if(obj.check2(userid,userpin)==true){
             while(true){
                 System.out.println();
@@ -69,8 +65,6 @@ public class Main {
                         obj1.intro();
                         obj1.deposit();
                         dp.add(obj1.deposit);
-
-                       // obj1.amount=obj1.amount;
                         System.out.println();
                         break;
                     case 2:
@@ -100,7 +94,6 @@ public class Main {
                                 System.out.println("An amount of $: " + withdrawl + " has been withdrawn");
 
                             }
-
                         }
                         for(int i:t){
                             System.out.println("An amount of $:"+i+" has been transferred");
@@ -124,15 +117,6 @@ public class Main {
                         break;
                     case 5:
                         obj4.exit();
-
-
-
-
-
-
-
-
-
                 }
 
             }
@@ -141,10 +125,5 @@ public class Main {
         else{
             System.out.println("Invalid login credentials");
         }
-
-
-
-        //obj.Display();
     }
-
 }
